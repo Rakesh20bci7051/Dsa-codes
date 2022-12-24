@@ -1,0 +1,21 @@
+
+class Complete{
+    
+   
+    // Function for finding maximum and value pair
+    public static long calculate (int arr[], int n) {
+        //Complete the function
+        int count=0;
+        for(int i=0;i<n-1;i++)
+        {
+            for(int j=i+1;j<n;j++)
+            {
+                if((arr[i]^arr[j])==0)
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    
+}
