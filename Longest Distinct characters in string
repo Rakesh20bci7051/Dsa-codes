@@ -1,0 +1,24 @@
+class Solution {
+    static int longestSubstrDistinctChars(String S) {
+        HashSet<Character> set = new HashSet<>();
+        int maxLength = 0;
+        int left = 0;
+        int right = 0;
+        int n = S.length();
+
+        while (right < n) {
+            if (!set.contains(S.charAt(right))) {
+                set.add(S.charAt(right));
+                maxLength = Math.max(maxLength, right - left + 1);
+                //if doesn't found move the right pointer
+                right++;
+            } else {
+                //if the character is found move the left pointer
+                set.remove(S.charAt(left));
+                left++;
+            }
+        }
+
+        return maxLength;
+    }
+}
