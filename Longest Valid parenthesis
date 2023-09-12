@@ -1,0 +1,26 @@
+//User function Template for Java
+
+class Solution{
+    static int maxLength(String S){
+
+                int ans = 0;
+        Stack<Integer> stack = new Stack<>();
+        stack.push(-1); // Initialize with -1 as a base
+        int n = S.length();
+        
+        for (int i = 0; i < n; i++) {
+            if (S.charAt(i) == '(') {
+                stack.push(i); // Push the index of the open parenthesis
+            } else {
+                stack.pop(); // Pop the corresponding open parenthesis
+                if (!stack.isEmpty()) {
+                    ans = Math.max(ans, i - stack.peek());
+                } else {
+                    stack.push(i); // Push the current index as a new base
+                }
+            }
+        }
+        
+        return ans;*/
+    }
+}
